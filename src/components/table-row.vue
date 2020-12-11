@@ -2,8 +2,7 @@
 
   <tr class="table-row">
     <td>
-        <input type="number" min="0"
-        v-model="price" id="item-price">
+        <p type="number" id="item-price">{{ price }}</p>
     </td>
     <td>
         <input type="number" id="item-count" min="0" v-model.number="count" @change="sendCount()">
@@ -74,18 +73,18 @@ export default {
     }
 
     #item-price {
-        width: 50px;
         text-align: center;
         border: 0;
-      
     }
+
     #item-sale {
         width: 50px;
         border: 0;
     }
 
     #item-count {
-        width: 50px;
+        width: 60px;
+        height: 25px;
         border: 1px solid lightgrey;
         box-shadow: none;
     }

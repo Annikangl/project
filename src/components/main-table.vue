@@ -14,6 +14,7 @@
           <tbody>
 
           </tbody>
+          <p>Общее количество: {{ totalCount }} </p>
       </table>
   </div>
 </template>
@@ -35,7 +36,15 @@ export default {
         },
     },
 
-    computed: {},
+    computed: {
+        totalCount() {
+            let total = 0;
+            this.counts.forEach(el => {
+                total += el;
+            })
+            return total;
+        }
+    },
 
     data() {
         return {
@@ -46,8 +55,8 @@ export default {
     methods: {
         onCount(row, count) {            
             this.counts[row.id] = count;
-            console.log(this.counts);
-        }
+        },
+
     }
 
 }
